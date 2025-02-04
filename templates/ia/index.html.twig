@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}IA Psychologue{% endblock %}
+
+{% block body %}
+    <h1>IA </h1>
+    <form method="post">
+        <textarea name="message" placeholder="Parlez-moi de votre journée..."></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+    {% if response %}
+        <div class="response">
+            <p><strong>IA :</strong> {{ response }}</p>
+        </div>
+    {% endif %}
+{% endblock %}

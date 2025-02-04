@@ -1,3 +1,75 @@
+:root {
+    --primary-color: #FF6F61;
+    --secondary-color: #6B5B95;
+    --background-color: #F4F4F4;
+    --text-color: #333333;
+}
+
 body {
-    background-color: skyblue;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-dark {
+    --primary-color: #2E86C1;
+    --secondary-color: #1C2833;
+    --background-color: #17202A;
+    --text-color: #EAECEE;
+}
+
+.theme-light {
+    --primary-color: #FF6F61;
+    --secondary-color: #6B5B95;
+    --background-color: #F4F4F4;
+    --text-color: #333333;
+}
+
+.theme-warm {
+    --primary-color: #E67E22;
+    --secondary-color: #D35400;
+    --background-color: #FDE3A7;
+    --text-color: #34495E;
+}
+.response {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
 }
