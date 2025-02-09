@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #FF6F61;
-    --secondary-color: #6B5B95;
+    --primary-color: #ffcba4;
+    --secondary-color: #b79bff;
     --background-color: #F4F4F4;
     --text-color: #333333;
 }
@@ -13,23 +13,23 @@ body {
 }
 
 .theme-dark {
-    --primary-color: #2E86C1;
-    --secondary-color: #1C2833;
-    --background-color: #17202A;
+    --primary-color: #146296;
+    --secondary-color: #374337;
+    --background-color: #191a1b;
     --text-color: #EAECEE;
 }
 
 .theme-light {
-    --primary-color: #FF6F61;
-    --secondary-color: #6B5B95;
+    --primary-color: #ffcba4;
+    --secondary-color: #b79bff;
     --background-color: #F4F4F4;
     --text-color: #333333;
 }
 
 .theme-warm {
-    --primary-color: #E67E22;
-    --secondary-color: #D35400;
-    --background-color: #FDE3A7;
+    --primary-color: #ffedc7;
+    --secondary-color: #482107;
+    --background-color: #e3c47a;
     --text-color: #34495E;
 }
 .response {
