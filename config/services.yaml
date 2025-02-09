@@ -24,4 +24,6 @@ services:
     # please note that last definitions always *replace* previous ones
     App\Service\IAService:
         arguments:
-            $apiKey: '%openai.api_key%'
+        # $client: '@http_client'
+        # $apiKey: '%env(OPENAI_API_KEY)%'
+           $apiKey: '%openai.api_key%'

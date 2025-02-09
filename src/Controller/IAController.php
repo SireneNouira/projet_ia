@@ -35,3 +35,29 @@ final class IAController extends AbstractController
     }
 
 }
+// // src/Controller/OpenAIController.php
+// namespace App\Controller;
+
+// use App\Service\OpenAIService;
+// use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+// use Symfony\Component\HttpFoundation\Response;
+// use Symfony\Component\Routing\Annotation\Route;
+
+// class OpenAIController extends AbstractController
+// {
+//     private $openAIService;
+
+//     public function __construct(OpenAIService $openAIService)
+//     {
+//         $this->openAIService = $openAIService;
+//     }
+
+//     #[Route('/ask-openai', name: 'ask_openai')]
+//     public function index(): Response
+//     {
+//         $message = 'Write a haiku about AI';
+//         $response = $this->openAIService->getCompletion($message);
+
+//         return new Response($response);
+//     }
+// }

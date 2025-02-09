@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const themeSelect = document.createElement('select');
-    themeSelect.innerHTML = `
-        <option value="light">Thème Clair</option>
-        <option value="dark">Thème Sombre</option>
-        <option value="warm">Thème Chaud</option>
-    `;
-    document.body.appendChild(themeSelect);
+    const themeSelect = document.getElementById('theme');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.body.className = `theme-${savedTheme}`;
+        themeSelect.value = savedTheme; 
+    }
 
     themeSelect.addEventListener('change', function() {
         document.body.className = `theme-${this.value}`;
+
+        localStorage.setItem('theme', this.value);
     });
 });

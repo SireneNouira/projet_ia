@@ -1,29 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Mon Projet de Développement Personnel{% endblock %}</title>
-    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ path('app_home') }}">Accueil</a></li>
-                <li><a href="{{ path('app_goal') }}">Objectifs</a></li>
-                <li><a href="{{ path('app_activity') }}">Activités</a></li>
-                <li><a href="{{ path('app_i_a') }}">IA</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        {% block body %}{% endblock %}
-    </main>
-    <footer>
-        <p>&copy; 2023 Mon Projet de Développement Personnel</p>
-    </footer>
-    <script  src="{{ asset('js/script.js') }}"></script>
-</body>
-</html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Mon Projet de Développement Personnel
+			{% endblock %}
+		</title>
+
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{ asset('styles/app.css') }}"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+
+
+		</head>
+		<body>
+			<header>
+				<nav>
+					<ul>
+						<li>
+							<a href="{{ path('app_home') }}">Accueil</a>
+						</li>
+						<li>
+							<a href="{{ path('app_goal') }}">Objectifs</a>
+						</li>
+						<li>
+							<a href="{{ path('app_activity') }}">Activités</a>
+						</li>
+						<li>
+							<a href="{{ path('app_i_a') }}">IA</a>
+						</li>
+						<li>
+							<select name="themeSelect" id="theme">
+								<option value="light">Thème Clair</option>
+								<option value="dark">Thème Sombre</option>
+								<option value="warm">Thème Chaud</option>
+							</select>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				{% block body %}{% endblock %}
+			</main>
+			<footer>
+				<p>&copy; 2023 Mon Projet de Développement Personnel</p>
+			</footer>
+			<script src="{{ asset('js/script.js') }}"></script>
+
+
+		</body>
+	</html>

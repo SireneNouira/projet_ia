@@ -1,0 +1,15 @@
+{
+    "name": "projet_ia",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "bootstrap": "^5.3.3",
+        "jquery": "^3.6.0",
+        "popper.js": "^1.16.1"
+    },
+    "scripts": {
+        "dev": "encore dev",
+        "dev-server": "encore dev-server",
+        "build": "encore production"
+    }
+}
