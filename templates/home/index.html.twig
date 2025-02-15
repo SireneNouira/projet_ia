@@ -1,7 +1,119 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
+	<header>
+		<nav>
+			<div class="logo">
+				<i class="fas fa-brain"></i>
+				<span>DevPerso</span>
+			</div>
+			<ul>
+
+				<li>
+					<a href="psy-ia.html">Psychologue IA</a>
+				</li>
+				<li>
+					<a href="ia-chat.html">Discussion IA</a>
+				</li>
+				<li>
+					<a href="agenda.html">Agenda</a>
+				</li>
+				<li>
+					<a href="notes.html">Notes</a>
+				</li>
+				<li>
+					<a href="tasks.html">Activités</a>
+				</li>
+				<li>
+					<a href="goals.html">Objectifs</a>
+				</li>
+				<li>
+					<select name="themeSelect" id="theme">
+						<option value="light">Thème Clair</option>
+						<option value="dark">Thème Sombre</option>
+						<option value="warm">Thème Chaud</option>
+					</select>
+				</li>
+				<li>
+					<a href="{{ path('app_register') }}">S'inscrire</a>
+				</li>
+				<li>
+					<a href="{{ path('app_login') }}">Se connecter</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	 <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Transformez votre vie avec DevPerso</h1>
+                <p>Votre compagnon IA pour le développement personnel, la productivité et la réussite.</p>
+                <a href="register.html" class="cta-button">Commencer maintenant</a>
+            </div>
+            <div class="hero-image">
+                <img src={{ asset('images/illustration.png') }} alt="Illustration IA">
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Pourquoi choisir DevPerso ?</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <i class="fas fa-robot"></i>
+                    <h3>IA Intelligente</h3>
+                    <p>Discutez avec une IA conçue pour vous aider à atteindre vos objectifs.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Agenda Personnalisé</h3>
+                    <p>Planifiez vos journées et suivez vos progrès facilement.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tasks"></i>
+                    <h3>Gestion des Tâches</h3>
+                    <p>Organisez vos activités et restez productif.</p>
+                </div>
+            </div>
+        </section>
+        <section class="psy-advantage">
+            <div class="psy-advantage-content">
+                <h2>Votre Psychologue IA, toujours à votre écoute</h2>
+                <p>
+                    Besoin de parler ? Notre IA psychologue est là pour vous écouter, 24h/24 et 7j/7, gratuitement.
+                    Que vous ayez besoin de conseils, de soutien ou simplement de vider votre sac, notre IA est là pour vous.
+                </p>
+                <ul class="psy-benefits">
+                    <li><i class="fas fa-check-circle"></i> Gratuit et accessible à tous</li>
+                    <li><i class="fas fa-check-circle"></i> Confidentialité garantie</li>
+                    <li><i class="fas fa-check-circle"></i> Réponses bienveillantes et personnalisées</li>
+                    <li><i class="fas fa-check-circle"></i> Disponible en tout temps</li>
+                </ul>
+                <a href="psy-ia.html" class="cta-button">Parler à l'IA psychologue</a>
+            </div>
+            <div class="psy-advantage-image">
+                <img src={{ asset('images/illustration.png') }} alt="Illustration Psychologue IA">
+            </div>
+        </section>
+        <section class="testimonials">
+            <h2>Ce que disent nos utilisateurs</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p>"DevPerso a changé ma vie ! L'IA m'aide à rester concentré sur mes objectifs."</p>
+                    <span>- Jean D.</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Je n'ai jamais été aussi organisé. L'agenda est incroyable !"</p>
+                    <span>- Marie L.</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Les rappels quotidiens et les conseils de l'IA sont précieux."</p>
+                    <span>- Pierre T.</span>
+                </div>
+            </div>
+        </section>
+    </main>
 
 {% endblock %}
