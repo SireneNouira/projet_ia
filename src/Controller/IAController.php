@@ -34,6 +34,15 @@ final class IAController extends AbstractController
      
     }
 
+    #[Route('/psy-ia', name: 'psy-ia')]
+    public function psy(Request $request): Response
+    {
+    
+        return $this->render('ia/psy-ia.html.twig', [
+           
+        ]);
+    }
+
 }
 // // src/Controller/OpenAIController.php
 // namespace App\Controller;

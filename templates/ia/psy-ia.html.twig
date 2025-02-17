@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Psychologue IA{% endblock %} 
+
+{% block header_extra %}
+
+    <li>
+        <a href="{{ path('app_home') }}">Accueil</a>
+    </li>
+{% endblock %}
+{%
+block body %}
+
+
+<main>
+  <section class="psy-chat">
+    <h2>Parlez à votre Psychologue IA</h2>
+    <p>
+      Vous pouvez vous confier à moi. Je suis là pour vous écouter et vous
+      aider.
+    </p>
+    <div class="chat-container">
+      <div id="psy-chat-box" class="chat-box">
+        <!-- Messages de l'IA et de l'utilisateur -->
+        <div class="message ia-message">
+          <p>
+            Bonjour ! Je suis votre psychologue IA. Comment puis-je vous aider
+            aujourd'hui ?
+          </p>
+        </div>
+      </div>
+      <div class="chat-input-container">
+        <input
+          type="text"
+          id="psy-chat-input"
+          placeholder="Écrivez votre message..."
+        />
+        <button onclick="sendPsyMessage()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

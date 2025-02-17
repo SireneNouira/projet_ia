@@ -1,16 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}IA Psychologue{% endblock %}
+{% block title %}IA Chat{% endblock %}
+
+{% block header_extra %}
+    <li>
+        <a href="{{ path('app_home') }}">Accueil</a>
+    </li>
+{% endblock %}
 
 {% block body %}
-    <h1>IA </h1>
-    <form method="post">
-        <textarea name="message" placeholder="Parlez-moi de votre journée..."></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
-    {% if response %}
-        <div class="response">
-            <p><strong>IA :</strong> {{ response }}</p>
-        </div>
-    {% endif %}
+<section class="ia-section">
+<h1 class="ia-title">IA Chat</h1>
+
+    <div class="ia-container">
+        
+        <form method="post" class="ia-form">
+            <textarea name="message" placeholder="Parlez-moi de votre journée..." class="ia-textarea"></textarea>
+            <button type="submit" class="ia-button">Envoyer</button>
+        </form>
+        {% if response %}
+            <div class="ia-response">
+                <p><strong>IA :</strong> {{ response }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+
+</section>
 {% endblock %}

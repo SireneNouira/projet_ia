@@ -14,7 +14,49 @@
 
 		</head>
 		<body>
-			
+			<header>
+		<nav>
+			<div class="logo">
+				<i class="fas fa-brain"></i>
+				<span>DevPerso</span>
+			</div>
+			<ul>
+{% block header_extra %}{% endblock %}
+				<li>
+					<a href="{{ path('psy-ia')}}">Psychologue IA</a>
+				</li>
+				<li>
+					<a href="{{ path('app_i_a')}}">Discussion IA</a>
+				</li>
+				{# <li>
+					<a href="{{ path('agenda')}}">Agenda</a>
+				</li>
+				<li>
+					<a href="{{ path('note')}}">Notes</a>
+				</li>
+				<li>
+					<a href="{{ path('activity')}}">Activités</a>
+				</li>
+				<li>
+					<a href="{{ path('goal')}}">Objectifs</a>
+				</li> #}
+				<li>
+					<select name="themeSelect" id="theme">
+						<option value="light">Thème Clair</option>
+						<option value="dark">Thème Sombre</option>
+						<option value="warm">Thème Chaud</option>
+					</select>
+				</li>
+				<li>
+					<a href="{{ path('app_register') }}">S'inscrire</a>
+				</li>
+				<li>
+					<a href="{{ path('app_login') }}">Se connecter</a>
+				</li>
+				
+			</ul>
+		</nav>
+	</header>
 			
 				{% block body %}{% endblock %}
 			
@@ -26,7 +68,7 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-			<script src="{{ asset('js/script.js') }}"></script>
+			<script defer src="{{ asset('js/script.js') }}"></script>
 
 
 		</body>

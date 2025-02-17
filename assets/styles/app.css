@@ -1,455 +1,635 @@
 :root {
-    --primary-color: #D2DAFF;
-    --secondary-color: #AAC4FF;
-    --background-color: #EEF1FF;
-    --text-color: #232323;
-    --violet-color: rgb(79, 59, 255);
+  --primary-color: #d2daff;
+  --secondary-color: #aac4ff;
+  --background-color: #eef1ff;
+  --text-color: #232323;
+  --violet-color: rgb(108, 92, 255);
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
-    line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  line-height: 1.6;
 }
 
 .theme-dark {
-    --primary-color: #150050;
-    --secondary-color: #3F0071;
-    --background-color: #000000 ;
-    --text-color: #EAECEE;
+  --primary-color: #150050;
+  --secondary-color: #3f0071;
+  --background-color: #000000;
+  --text-color: #eaecee;
 }
 
 .theme-light {
-    --primary-color: #D2DAFF;
-    --secondary-color: #AAC4FF;
-    --background-color: #EEF1FF;
-    --text-color: #232323;
+  --primary-color: #d2daff;
+  --secondary-color: #aac4ff;
+  --background-color: #eef1ff;
+  --text-color: #232323;
 }
 
 .theme-warm {
-    --primary-color: #CA8787;
-    --secondary-color: #A87676;
-    --background-color: #E1ACAC;
-    --text-color: #ffd8d8;
+  --primary-color: #ca8787;
+  --secondary-color: #a87676;
+  --background-color: #e1acac;
+  --text-color: #ffd8d8;
 }
 .response {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 header {
-    background-color: var(--primary-color);
-    padding: 1rem;
-    color: var(--violet-color);
-  
+  background-color: var(--primary-color);
+  padding: 1rem;
+  color: var(--violet-color);
 }
 header .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 header .logo i {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 /* Style de base pour le select */
 #theme {
-    width: 180px; /* Largeur du select */
-   
-    font-size: 1.2rem; /* Taille de la police */
-    color: rgb(11, 9, 114); /* Couleur du texte */
-    background-color: var(--primary-color); /* Couleur de fond */
-    border: none; /* Bordure */
-    appearance: none; /* Supprime l'apparence par défaut du navigateur */
-    -webkit-appearance: none; /* Pour les navigateurs WebKit */
-    -moz-appearance: none; /* Pour les navigateurs Mozilla */
-    cursor: pointer; /* Curseur en forme de main */
+  width: 180px; /* Largeur du select */
+
+  font-size: 1.2rem; /* Taille de la police */
+  color: rgb(11, 9, 114); /* Couleur du texte */
+  background-color: var(--primary-color); /* Couleur de fond */
+  border: none; /* Bordure */
+  appearance: none; /* Supprime l'apparence par défaut du navigateur */
+  -webkit-appearance: none; /* Pour les navigateurs WebKit */
+  -moz-appearance: none; /* Pour les navigateurs Mozilla */
+  cursor: pointer; /* Curseur en forme de main */
 }
 
 /* Style pour les options */
 #theme option {
-    padding: 10px; /* Espacement intérieur des options */
-    background-color: #fff; /* Couleur de fond des options */
-    color: #333; /* Couleur du texte des options */
+  padding: 10px; /* Espacement intérieur des options */
+  background-color: #fff; /* Couleur de fond des options */
+  color: #333; /* Couleur du texte des options */
 }
 
 /* Style lorsque le select est en focus */
 #theme:focus {
-    border-color: #666; /* Changement de couleur de la bordure */
-    outline: none; /* Supprime l'outline par défaut */
+  border-color: #666; /* Changement de couleur de la bordure */
+  outline: none; /* Supprime l'outline par défaut */
 }
 
 /* Style pour le bouton déroulant (flèche) */
 #theme {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>'); /* Flèche personnalisée */
-    background-repeat: no-repeat;
-    background-position: right 10px center; /* Position de la flèche */
-    background-size: 25px; /* Taille de la flèche */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23333"><path d="M7 10l5 5 5-5z"/></svg>'); /* Flèche personnalisée */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Position de la flèche */
+  background-size: 25px; /* Taille de la flèche */
 }
 
-nav{
-    display: flex;
-    justify-content: space-between;
+nav {
+  display: flex;
+  justify-content: space-between;
 }
 nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 1rem;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
 }
 nav ul li {
-    margin: 0 15px;
-    transition: color 0.3s ease;
+  margin: 0 15px;
+  transition: color 0.3s ease;
 }
 
 nav ul li a {
   color: rgb(11, 9, 114);
-    text-decoration: none;
-   font-size: 1.2rem;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 nav ul li a:hover {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #bd8dff, var(--violet-color));
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #bd8dff, var(--violet-color));
 }
 
 .hero-content {
-    max-width: 50%;
-    animation: fadeInLeft 1s ease;
-  
+  max-width: 50%;
+  animation: fadeInLeft 1s ease;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-   color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .hero-content .cta-button {
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .hero-content .cta-button:hover {
-    background-color: var(--violet-color);
+  background-color: var(--violet-color);
 }
 
 .hero-image img {
-    max-width: 400px;
-    height: auto;
-    animation: fadeInRight 1s ease;
+  max-width: 400px;
+  height: auto;
+  animation: fadeInRight 1s ease;
 }
 
 .features {
-    padding: 4rem 2rem;
-    text-align: center;
+  padding: 4rem 2rem;
+  text-align: center;
 }
 
 .features h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .feature-cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    margin: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card i {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #6200ea;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6200ea;
 }
 
 .card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .card p {
-    font-size: 1rem;
-    color: #666;
+  font-size: 1rem;
+  color: #666;
 }
 
 .testimonials {
-    padding: 4rem 2rem;
-    background-color: #f4f4f9;
-    text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f4f4f9;
+  text-align: center;
 }
 
 .testimonials h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .testimonial-slider {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .testimonial {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    margin: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
 }
 
 .testimonial span {
-    font-size: 0.9rem;
-    color: #6200ea;
-    font-weight: bold;
+  font-size: 0.9rem;
+  color: #6200ea;
+  font-weight: bold;
 }
-
-
-
 
 /* Animations */
 @keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
-
 
 /* Styles pour la section Psychologue IA */
 .psy-chat {
-    padding: 2rem;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    margin: 2rem auto;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chat-container {
-    background: white;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chat-box {
-    height: 400px;
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background-color: #f4f4f9;
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f4f4f9;
 }
 
 .message {
-    margin-bottom: 1rem;
-    padding: 0.8rem;
-    border-radius: 10px;
-    max-width: 70%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 10px;
+  max-width: 70%;
 }
 
 .message.ia-message {
-    background-color: #6200ea;
-    color: white;
-    align-self: flex-start;
+  background-color: rgba(131, 143, 255, 0.521);
+  color: rgb(0, 0, 0);
+  align-self: flex-start;
 }
 
 .message.user-message {
-    background-color: #ffeb3b;
-    color: #333;
-    align-self: flex-end;
-    margin-left: auto;
+  background-color: rgba(255, 201, 243, 0.425);
+  color: #333;
+  align-self: flex-end;
+  margin-left: auto;
 }
 
 .chat-input-container {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .chat-input-container input {
-    flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
 .chat-input-container button {
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .chat-input-container button:hover {
-    background-color: #3700b3;
+  background-color: #3700b3;
 }
-
-
 
 /* Styles pour la section Avantage Psychologue IA home */
 .psy-advantage {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #bd8dff, var(--violet-color));
-    color: white;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #bd8dff, var(--violet-color));
+  color: white;
+  margin-top: 2rem;
 }
 
 .psy-advantage-content {
-    max-width: 50%;
-    animation: fadeInLeft 1s ease;
+  max-width: 50%;
+  animation: fadeInLeft 1s ease;
 }
 
 .psy-advantage-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .psy-advantage-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .psy-benefits {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
 }
 
 .psy-benefits li {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .psy-benefits li i {
-    margin-right: 10px;
-    color: var(--secondary-color);
+  margin-right: 10px;
+  color: var(--secondary-color);
 }
 
 .psy-advantage-image img {
-    max-width: 100%;
-    height: auto;
-    animation: fadeInRight 1s ease;
+  max-width: 100%;
+  height: auto;
+  animation: fadeInRight 1s ease;
 }
 
 .cta-button {
-    background-color: var(--secondary-color);
-    color: #333;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
+  background-color: var(--secondary-color);
+  color: #333;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .cta-button:hover {
-    background-color: var(--violet-color);
+  background-color: var(--violet-color);
 }
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: rgb(156, 113, 255);
-    color: white;
-   
-    margin-top: 4rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: rgb(156, 113, 255);
+  color: white;
+
+  margin-top: 4rem;
 }
 footer .social-links {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 footer .social-links a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+  color: white;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
 }
 
 footer .social-links a:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* style page login connexion */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 5rem;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Title */
+.h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Labels */
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: bold;
+}
+
+/* Input fields */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--violet-color);
+  outline: none;
+}
+
+/* Button */
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--violet-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Alert messages */
+.alert {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Logout link */
+.mb-3 a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mb-3 a:hover {
+  text-decoration: underline;
+}
+/*  */
+/* style page ia chat discussions ia ai */
+/*  */
+.ia-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-self: center;
+  width: 90%;
+height: 80vh;
+  margin: 2rem 5rem;
+  background-color: #2a2533;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+/* Conteneur principal */
+.ia-container {
+  width: 20%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+/* Titre de la page */
+.ia-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #6200ea;
+  margin-bottom: 2rem;
+}
+
+/* Formulaire */
+.ia-form {
+  gap: 1rem;
+}
+
+/* Zone de texte */
+.ia-textarea {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  min-height: 50px;
+  transition: border-color 0.3s ease;
+}
+
+.ia-textarea:focus {
+  border-color: #6200ea;
+  outline: none;
+}
+
+/* Bouton Envoyer */
+.ia-button {
+  background-color: #6200ea;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ia-button:hover {
+  background-color: #3700b3;
+}
+
+/* Réponse de l'IA */
+.ia-response {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-left: 4px solid #6200ea;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ia-response p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.ia-response strong {
+  color: #6200ea;
 }
