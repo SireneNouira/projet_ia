@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Notes{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/notes.css') }}">
+{% endblock %}
+{% block header_extra %}
+    <li>
+        <a href="{{ path('app_home') }}">Accueil</a>
+    </li>
+{% endblock %}
+{% block body %}
+    <div class="notes-container">
+        <h1>📔 Mes Notes</h1>
+        <div class="notes-grid">
+            {% for note in notes %}
+                <div class="note-card" data-note-id="{{ note.id }}">
+                    <h2>{{ note.titre }}</h2>
+                    <p>{{ note.description }}</p>
+                    <div class="note-actions">
+                        <a href="{{ path('app_note_show', {'id': note.id}) }}" class="btn-show">👀 Voir</a>
+                        <a href="{{ path('app_note_edit', {'id': note.id}) }}" class="btn-edit">✏️ Modifier</a>
+                        <form action="{{ path('app_note_delete', {'id': note.id}) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette note ?');">
+                            <button type="submit" class="btn-delete">🗑️ Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            {% else %}
+                <p class="no-notes">Aucune note trouvée. Commencez à en créer une !</p>
+            {% endfor %}
+        </div>
+        <a href="{{ path('app_note_new') }}" class="btn-new-note">➕ Ajouter une note</a>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/notes.js') }}"></script>
+{% endblock %}

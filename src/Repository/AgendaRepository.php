@@ -2,22 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Goal;
+use App\Entity\Agenda;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Goal>
+ * @extends ServiceEntityRepository<Agenda>
  */
-class GoalRepository extends ServiceEntityRepository
+class AgendaRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Goal::class);
+        parent::__construct($registry, Agenda::class);
     }
 
     //    /**
-    //     * @return Goal[] Returns an array of Goal objects
+    //     * @return Agenda[] Returns an array of Agenda objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class GoalRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Goal
+    //    public function findOneBySomeField($value): ?Agenda
     //    {
     //        return $this->createQueryBuilder('a')
     //            ->andWhere('a.exampleField = :val')

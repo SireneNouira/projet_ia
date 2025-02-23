@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon Agenda Fun{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/agenda.css') }}">
+{% endblock %}
+{% block header_extra %}
+    <li>
+        <a href="{{ path('app_home') }}">Accueil</a>
+    </li>
+{% endblock %}
+{% block body %}
+    <div class="agenda-container">
+        <h1>Mon Agenda 🌈</h1>
+        
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prevMonth">◀</button>
+                <h2 id="currentMonthYear">{{ "now"|date('F Y') }}</h2>
+                <button id="nextMonth">▶</button>
+            </div>
+            <div class="calendar-grid">
+                {% for day in 1.."now"|date('t') %}
+                    <div class="calendar-day" data-date="{{ "now"|date('Y-m-') ~ day }}">
+                        <div class="day-number">{{ day }}</div>
+                        <div class="events" contenteditable="true"></div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <button id="saveAgenda" class="btn-save">Enregistrer mon Agenda 🚀</button>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/agenda.js') }}"></script>
+{% endblock %}

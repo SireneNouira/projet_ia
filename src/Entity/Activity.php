@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ActivityRepository;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ActivityRepository::class)]
@@ -15,6 +16,15 @@ class Activity
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $quotidien = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $title = null;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $description = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $date = null;
 
     public function getId(): ?int
     {
@@ -29,6 +39,42 @@ class Activity
     public function setQuotidien(?string $quotidien): static
     {
         $this->quotidien = $quotidien;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): static
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): static
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getDate(): ?string
+    {
+        return $this->date;
+    }
+
+    public function setDate(?string $date): static
+    {
+        $this->date = $date;
 
         return $this;
     }

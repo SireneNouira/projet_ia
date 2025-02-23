@@ -1,20 +1,64 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ActivityController!{% endblock %}
+{% block title %}Mes Activités{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('styles/activities.css') }}">
+{% endblock %}
+{% block header_extra %}
+    <li>
+        <a href="{{ path('app_home') }}">Accueil</a>
+    </li>
+{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="activities-container">
+        <h1>🌟 Mes Activités</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <!-- Section Suggestions Quotidiennes -->
+        <div class="daily-suggestion">
+            <h2>💡 Suggestion du Jour</h2>
+            <p id="suggestion-text">Chargement de la suggestion...</p>
+            <button id="refresh-suggestion">🔄 Nouvelle Suggestion</button>
+        </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/Dev404.DESKTOP-F8FA0R1/Documents/projet_ia/projet_ia/src/Controller/ActivityController.php</code></li>
-        <li>Your template at <code>C:/Users/Dev404.DESKTOP-F8FA0R1/Documents/projet_ia/projet_ia/templates/activity/index.html.twig</code></li>
-    </ul>
-</div>
+        <!-- Filtres par Thème -->
+        <div class="theme-filters">
+            <button class="theme-btn active" data-theme="all">Tout</button>
+            <button class="theme-btn" data-theme="sport">🏋️‍♂️ Sport</button>
+            <button class="theme-btn" data-theme="culture">🎨 Culture</button>
+            <button class="theme-btn" data-theme="detente">🧘‍♀️ Détente</button>
+            <button class="theme-btn" data-theme="quotidien">🏠 Quotidien</button>
+        </div>
+
+        <!-- Liste des Activités -->
+        <div class="activities-grid">
+            {% for activity in activities %}
+                <div class="activity-card" data-theme="{{ activity.quotidien ? 'quotidien' : 'other' }}">
+                    <h2>{{ activity.title }}</h2>
+                    <p>{{ activity.description }}</p>
+                    <div class="activity-meta">
+                        <span class="activity-date">📅 </span>
+                        <span class="activity-theme">{{ activity.quotidien ? '🏠 Quotidien' : '🎯 Autre' }}</span>
+                    </div>
+                    <div class="activity-actions">
+                        <a href="{{ path('app_activity_show', {'id': activity.id}) }}" class="btn-show">👀 Voir</a>
+                        <a href="{{ path('app_activity_edit', {'id': activity.id}) }}" class="btn-edit">✏️ Modifier</a>
+                        <form action="{{ path('app_activity_delete', {'id': activity.id}) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette activité ?');">
+                            <button type="submit" class="btn-delete">🗑️ Supprimer</button>
+                        </form>
+                    </div>
+                </div>
+            {% else %}
+                <p class="no-activities">Aucune activité trouvée. Commencez à en créer une !</p>
+            {% endfor %}
+        </div>
+
+        <a href="{{ path('app_activity_new') }}" class="btn-new-activity">➕ Ajouter une activité</a>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/activities.js') }}"></script>
 {% endblock %}
